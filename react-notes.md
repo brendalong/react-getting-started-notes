@@ -51,5 +51,33 @@ ReactDOM.render(<App />, mount);
 * Comments in React (remember objects) `{/* This is a comment in React */}`
  
 
+## FIVE - Data Diven Component
+* Send data to components with **props**
+* Reference the title within the component - <Header> component
+```
+<span className="title">
+   {this.props.title}
+</span>
+```
+* Set Header to different values when called
+```
+<Header title="Timeline" />
+<Header title="Profile" />
+<Header title="Settings" />
+<Header title="Chat" />
+```
+* Can pass all kinds of things: objects, functions, numbers, etc.
+* Define what props the content needs and create an object
+
+
+  
+
+
+
+
+
+
+
+
 
 
