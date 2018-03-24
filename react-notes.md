@@ -13,11 +13,34 @@ https://github.com/fullstackreact/30-days-of-react
 * How does it work - React does not operates directly on the browser's DOM immediately. React uses a virtual DOM (memory). Changes are made in memory and then determines what needs changes to actual document. This is faster.
 * We write a virtual component that React will turn into the DOM.
 
-
-
 ## TWO - JSX/ES6 - Hello World
-* ES6 is a new version of JavaScript that adds some nice syntactical and functional additions (finalized in 2015 and most new browsers support)
+* ES6 version of JavaScript with nice syntactical and functional additions (finalized in 2015 and most new browsers support)
 * To work in all, transpose ES6 to JS
 * All React components have a `render` function specifying the HTML output
 * JSX, is a React extension that allows us to write JavaScript that looks like HTML.
+* Attribute **className** (same as class)
+* Review JSX and JS comparison (which one is easier)
+
+## THREE - Component
+* Include React library
+* Use of Babel - transpiler from ES6 to ES5
+* `ReactDOM.render(<what>, <where>)`
+* Component
+  * All React components require at least a `render()` function. This returns a virtual DOM representation of browser DOM elements.
+
+```
+class App extends React.Component {
+    render() {
+      return <h1>Hello from our app</h1>
+    }
+ }
+```
+* Need to tell it **where and what**
+
+```
+var mount = document.querySelector('#app');
+ReactDOM.render(<App />, mount);
+```
+
+
 
