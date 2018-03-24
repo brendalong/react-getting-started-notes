@@ -68,7 +68,44 @@ ReactDOM.render(<App />, mount);
 ```
 * Can pass all kinds of things: objects, functions, numbers, etc.
 * Define what props the content needs and create an object
+* Example: setup object
+```
+{
+  timestamp: new Date().getTime(),
+  text: "Ate lunch",
+  user: {
+    id: 1,
+    name: 'Shelly',
+    avatar: "images/shelly.jpg"
+  },
+  comments: [
+    { from: 'Ari', text: 'Me too!' }
+  ]
+}
+```
+* Use props
+```
+class Content extends React.Component {
+  render() {
+    const {activity} = this.props; // ES6 destructuring
 
+    return (
+    <div>
+      <div className="avatar">
+         <img
+           alt={activity.text}
+           src={activity.user.avatar} />
+         {activity.user.name}
+       </div>
+      <span className="time">
+         {activity.timestamp}
+      </span>
+      <p>{activity.text}</p>
+      <div className="commentCount">
+         {activity.comments.length}
+      </div>
+    </div>
+```
 
   
 
