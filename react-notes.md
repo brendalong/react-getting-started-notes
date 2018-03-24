@@ -84,7 +84,8 @@ ReactDOM.render(<App />, mount);
 }
 ```
 * Use props
-```
+  
+```jsx
 class Content extends React.Component {
   render() {
     const {activity} = this.props; // ES6 destructuring
@@ -110,6 +111,53 @@ class Content extends React.Component {
 }
 ```
 
+### Javascript within JSX - it's all JS
+
+```jsx
+//`activities` is an array of objects
+render() {
+    const {activities} = this.props;
+
+    return (
+      <div>
+        {/* Use the array method `map` */}
+        {/* Timeline item */}
+        {activities.map((activity) => {
+          return (
+            <div className="item">
+              <div className="avatar">
+                <img
+                  alt={activity.text}
+                  src={activity.user.avatar} />
+                {activity.user.name}
+              </div>
+
+              <span className="time">
+                {activity.timestamp}
+              </span>
+              <p>{activity.text}</p>
+              <div className="commentCount">
+                {activity.comments.length}
+              </div>
+            </div>
+          );
+        })}
+
+      </div>
+    )
+  }
+}
+```
+### The React way would be to create components for the containing and displaying of content
+
+```jsx
+{/* Timeline item */}
+{activities.map((activity) => (
+  <ActivityItem
+    activity={activity} />
+))}
+```
+* use props to pass the data to the component
   
 
 
