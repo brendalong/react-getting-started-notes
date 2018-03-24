@@ -42,5 +42,14 @@ var mount = document.querySelector('#app');
 ReactDOM.render(<App />, mount);
 ```
 
+## FOUR - Complex Components (good visuals)
+* Take a look at css structure: https://gist.github.com/auser/2bc34b9abf07f34f602dccd6ca855df1
+* Break down large into smaller chunks (components). Skill developed with experience.
+  * App(wrapper/parent), Title Bar(child), and Conent(child)
+  * Example: start by adding main content into the render of the app.
+  * Create components for the children and add to the App (simple straight up example)
+* Comments in React (remember objects) `{/* This is a comment in React */}`
+ 
+
 
 
