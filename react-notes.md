@@ -105,6 +105,9 @@ class Content extends React.Component {
          {activity.comments.length}
       </div>
     </div>
+    )
+  }
+}
 ```
 
   
