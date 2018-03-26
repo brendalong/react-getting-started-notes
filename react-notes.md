@@ -187,7 +187,7 @@ this.setState({
 * Only keep values in state that you are using in the render(). For example, new Date() delivers many more properties that hours, minutes, seconds - but those are the only ones to keep. Extra values/calculations cause unnecessary rendering and wasteful CPU cycles.
 
 
-## Seven - Lifecycle Hooks - Updating timeline app with api call.
+## SEVEN - Lifecycle Hooks - Updating timeline app with api call.
 * Components loading is not instant. Takes a moment. Need hooks.
 * `componentWillMount()` - called just before the component is due to be mounted on the page.
 * `componentDidMount()` - called just after the component has been mounted.
@@ -198,7 +198,7 @@ this.setState({
 * `componentWillUnmount()` - called right before component is unmounted. Allows us to clean up (example of clock and setTimeout()).
 
 
-## Eight - Packaging and PropTypes
+## EIGHT - Packaging and PropTypes
 * prop-types object export gives ability to define type of prop (string, number, bool, func, symbol, object, array, and anything with PropTypes.node)
 * Import prop-types and then define
 
@@ -226,3 +226,57 @@ MyComponent.propTypes = {
 ```
 * Can also have custom types
 * Finally set `defaultProps`
+
+## NINE - Styles
+* **Remember** `class` becomes `className` in React
+* Straight up link to CSS doc
+```
+render() {
+  return <span className="menu navigation-menu">Menu</span>
+}
+
+// OR 
+
+render() {
+  let className = 'menu';
+  if (this.props.isActive) {
+    className += ' menu-active';
+  }
+  return <span className={className}>Menu</span>
+}
+```
+
+* Option: Use of CSS Modules: https://glenmaddern.com/articles/css-modules
+
+**From React Docs** CSS classes are generally more efficient than inline styles.
+
+### Inline styles - add to component - use of JS Object
+```
+const style = { color: 'blue' }
+<div style={style}>
+  This text will have the color blue
+</div>
+
+// OR
+
+render() {
+  const divStyle = { color: 'blue' }
+  return (
+    <div style={divStyle}>
+      This text will have the color blue
+  </div>
+  );
+}
+```
+* React requires us to **camel-case** the style name: backgroundColor vs background-color
+
+### Styling libraries
+* Radium https://formidable.com/open-source/radium/ - inline style library
+  * Scoped styles without selectors
+  * Avoids specificity conflicts
+  * Source order independence
+  * Dead code elimination
+  * Highly expressive
+* ReactStrap https://reactstrap.github.io/
+
+
