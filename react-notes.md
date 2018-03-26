@@ -357,3 +357,12 @@ const Notification = (props) => {
 ```
 * Check out `React.Children` object
 
+
+## TWELVE - create-react-app
+Official generator app to get up and running.
+* `npm install --global create-react-app`
+* use nvm for version management 
+* Get started: within designated directory, `create-react-app myApp && cd myApp`
+* `npm start` compiles and starts server
+* Review the folder structure created.
+
