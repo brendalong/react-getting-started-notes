@@ -385,7 +385,41 @@ export default MyComponent;
 * `npm run build` creates a minified optimize version of app
   
   
-  
+## THIRTEEN - Repeating Elements
+Within template tags, any JS can be used
+```jsx
+const a = [1, 10, 100, 1000, 10000];
+
+const App = (props) => {
+  return (
+    <ul>
+      {a.map(i => {
+        return <li>{i}</li>
+      })}
+    </ul>
+  )
+}
+```
+### Array Methods
+* map - accepts a function to be run on each element of the array
+
+### Virtual DOM comes into play
+* `<li>` needs more details so React knows what to update. 
+* We need to provide unique keys and we do with the `key` prop.
+```jsx
+const App = (props) => {
+  return (
+    <ul>
+      {a.map(i => {
+        return <li key={i}>{i}</li>
+      })}
+    </ul>
+  )
+}
+```
+
+
+
 
 
 
