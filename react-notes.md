@@ -197,3 +197,4 @@ this.setState({
 * `componentWillReceiveProps()` - when the component is about to receive new props and update our state based on new props.
 * `componentWillUnmount()` - called right before component is unmounted. Allows us to clean up (example of clock and setTimeout()).
 
+## Eight - Packaging and PropTypes
