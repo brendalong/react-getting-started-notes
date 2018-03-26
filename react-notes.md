@@ -179,6 +179,10 @@ render() {
 * `this.setState()` can pass a function as a second argument. Guarantees function is called after `setState()`
 
 ```jsx
+this.setState({loading: true}, this.updateData);
+
+//OR
+
 this.setState({
   currentTime: currentTime
 }, this.setTimer);
@@ -278,5 +282,59 @@ render() {
   * Dead code elimination
   * Highly expressive
 * ReactStrap https://reactstrap.github.io/
+
+
+## TEN - Interactivity - Toggle search input - Great one for reading through.
+
+https://www.fullstackreact.com/30-days-of-react/day-10/
+
+
+* Regular JS uses event listeners.
+* React handles events using `props`
+
+For example: `addEventListener('mousemove', someFunction(){});` becomes
+
+```
+<div onMouseMove={(evt) => console.log(evt)}>
+  Move the mouse over this text
+</div>
+```
+* click, touch, drag, scroll, selection events, and many more: https://reactjs.org/docs/events.html
+* Event object is reused and all properties will be nullified after the event callback has been invoked. (Cannot access asynchronous, can use `event.persist()` if needed to change this behavior)
+* `onClick` - used a lot, become familiar!
+* The idea is that clicks update the state of something, which causes a re-render: `this.setState()`
+
+### Constructor function
+* In JS, constructor runs when object is created and returns a reference to the Object function that created the instance's prototype.
+* Runs when new object is created and method allows to setup instance variables right when it is created.
+* With ES6 class syntax, call `super()` before any other method which calls the parent class's constructor.
+
+### Show Search Box Example Flow
+* `this.state = {searchVisible: false}`
+* create function `showSearch()` that toggles searchVisible with `!this.state.searchVisible`
+* `onClick` calls showSearch which toggles the state of searchVisible
+* Remember, when state changes, re-render occurs
+* The class on the input always starts with `searchInput`. Depending on the **state** could add `active` which will then show.
+
+### Input Events - Search Form
+* Mostly use `onSubmit()` and `onChange()` - get familiar!
+* Create SearchForm component and add to the Header component inside `render()` and part of `return()`
+* SearchForm is stateful since we hold on to the value of search input `this.state = {searchText: ''}`
+* Pass searchVisible as prop from Header component
+* Submit - call `event.preventDefault()`. Default behavior causes page to reload.
+* Good practice to define as `defaultProps{}`
+* Actual submitForm passed up to Header component and to another called Panel - looks like:
+```
+<Panel>
+  <Header>
+    <SearchForm></SearchForm>
+  </Header>
+</Panel>
+```
+* Common way of doing things - pass it along. The search passes to the header but since the panel displays the results, pass the search to the panel.
+* filter function - filters out the values that return falsy values and keep truthy ones.
+
+
+
 
 
