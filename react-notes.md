@@ -1,6 +1,8 @@
 # Getting Started With React
 https://github.com/fullstackreact/30-days-of-react
 
+**Take a look at: array split, join, filter and map.**
+
 ## One
 
 * React is a JavaScript library for building user interfaces, the view layer for web applications.
@@ -335,6 +337,23 @@ For example: `addEventListener('mousemove', someFunction(){});` becomes
 * filter function - filters out the values that return falsy values and keep truthy ones.
 
 
+## ELEVEN - pure components or stateless
+* Checkout React.Children for helpers related to mapping over children and unique key vals.
+* Stateless can replace any component that has only a `render()` function.
+```
+// this is simple component
+const HelloWorld = () => (<div>Hello world</div>);
 
-
+//little bit more
+const Notification = (props) => {
+  const {level, message} = props;
+  const classNames = ['alert', 'alert-' + level]
+  return (
+    <div className={classNames}>
+      {message}
+    </div>
+  )
+};
+```
+* Check out `React.Children` object
 
