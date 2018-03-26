@@ -167,7 +167,24 @@ render() {
 * use props to pass the data to the component
   
 
-## SIX - Stateful Components
+## SIX - Stateful Components - Clock Example
+* Do not modify `this.props`, instead use state. Example of header title with props. If header updates prop then app no longer knows what the title is.
+* Use props as much as possible, however there are times when component needs to update it's own state.
+* Example: active flag on child component or timer. 
+* Whenever the state changes (via the this.setState() function), the component will **rerender**.
+* Clock example: will need to track the current time in the state of the component.
+* Set intial state in the constructor() with this.state.
+* First line of constructor needs to call `super(props)`
+* Call `setState()` on the `this` value of the component as it's a part of the React.Component class we are subclassing.
+* `this.setState()` can pass a function as a second argument. Guarantees function is called after `setState()`
+
+```jsx
+this.setState({
+  currentTime: currentTime
+}, this.setTimer);
+```
+
+* Only keep values in state that you are using in the render(). For example, new Date() delivers many more properties that hours, minutes, seconds - but those are the only ones to keep. Extra values/calculations cause unnecessary rendering and wasteful CPU cycles.
 
 
 
