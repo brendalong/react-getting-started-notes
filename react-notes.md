@@ -365,4 +365,27 @@ Official generator app to get up and running.
 * Get started: within designated directory, `create-react-app myApp && cd myApp`
 * `npm start` compiles and starts server
 * Review the folder structure created.
+* Take a look at the package.json
+  * scripts: start, build, test, eject. (Only eject on a branch - once done, it cannot be undone.)
+* Built-in webserver (webpack) - changes will be updated in browser.
+* Take a look at App.js - simple component with render() function.
+* index.html - div for placement of React app. Styles can be included here. Mounting of the app takes place in index.js
+* Create `components` directory.
+  * Components (classes) names begin with capital letter (Header.js, Content.js, etc.)
+  * Use `import MyComponent` similar to Browserify
+  * Use `export default MyComponent` similar to Browserify. Single export exclude `{}`
+```
+import React from 'react';
+
+class MyComponent extends React.Component {
+
+}
+export default MyComponent;
+```
+* `npm run build` creates a minified optimize version of app
+  
+  
+  
+
+
 
