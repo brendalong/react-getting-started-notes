@@ -187,7 +187,7 @@ this.setState({
 * Only keep values in state that you are using in the render(). For example, new Date() delivers many more properties that hours, minutes, seconds - but those are the only ones to keep. Extra values/calculations cause unnecessary rendering and wasteful CPU cycles.
 
 
-## Seven - Lifecycle Hooks - Updating timeline with api call.
+## Seven - Lifecycle Hooks - Updating timeline app with api call.
 * Components loading is not instant. Takes a moment. Need hooks.
 * `componentWillMount()` - called just before the component is due to be mounted on the page.
 * `componentDidMount()` - called just after the component has been mounted.
