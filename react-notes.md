@@ -187,9 +187,13 @@ this.setState({
 * Only keep values in state that you are using in the render(). For example, new Date() delivers many more properties that hours, minutes, seconds - but those are the only ones to keep. Extra values/calculations cause unnecessary rendering and wasteful CPU cycles.
 
 
-
-
-
-
-
+## Seven - Lifecycle Hooks - Updating timeline with api call.
+* Components loading is not instant. Takes a moment. Need hooks.
+* `componentWillMount()` - called just before the component is due to be mounted on the page.
+* `componentDidMount()` - called just after the component has been mounted.
+* Mounting - converting the virtual components into actual DOM elements that are placed in the DOM by React.
+* `componentWillUpdate()` - a hook to handle preparing our component for a change (don't call `this.setState()` to handle change as it will cause an infinite loop).
+* `componentDidUpdate()`
+* `componentWillReceiveProps()` - when the component is about to receive new props and update our state based on new props.
+* `componentWillUnmount()` - called right before component is unmounted. Allows us to clean up (example of clock and setTimeout()).
 
