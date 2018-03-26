@@ -197,4 +197,32 @@ this.setState({
 * `componentWillReceiveProps()` - when the component is about to receive new props and update our state based on new props.
 * `componentWillUnmount()` - called right before component is unmounted. Allows us to clean up (example of clock and setTimeout()).
 
+
 ## Eight - Packaging and PropTypes
+* prop-types object export gives ability to define type of prop (string, number, bool, func, symbol, object, array, and anything with PropTypes.node)
+* Import prop-types and then define
+
+```
+import PropTypes from 'prop-types'
+
+class Header extends React.Component {
+  // ...
+}
+
+Header.propTypes = {
+  title: PropTypes.string
+}
+```
+* Ability to communicate from child to parent using function.
+* Define what an array can hold - `PropTypes.arrayOf([])`
+* Define collection type
+* Define object type
+* Define React types - passing elements from a parent to child
+* `isRequired` append to any proptype descriptions. Helpful when component relies on prop
+```
+MyComponent.propTypes = {
+  title: PropTypes.name.isRequired,
+}
+```
+* Can also have custom types
+* Finally set `defaultProps`
