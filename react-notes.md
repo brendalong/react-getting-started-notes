@@ -405,7 +405,8 @@ const App = (props) => {
 
 ### Virtual DOM comes into play
 * `<li>` needs more details so React knows what to update. 
-* We need to provide unique keys and we do with the `key` prop.
+* Provide unique keys with the `key` prop.
+
 ```jsx
 const App = (props) => {
   return (
@@ -418,8 +419,24 @@ const App = (props) => {
 }
 ```
 
+* **Checkout** `React.cloneElement()`. Has the same API as the React.createElement() function where the arguments are:
+  * The ReactElement we want to clone
+  * Any props we want to add to the instance
+  * Any children we want it to have.
+* **Checkout** `React.Children` object - has utilities/methods for dealing with children.
+* Updated example with React.Children. Adding the key is a utility.
 
+```jsx
+const App = (props) => {
+  return (
+    <ul>
+      {React.Children.map(a, i => <li>{i}</li>)}
+    </ul>
+  )
+}
+```
 
+# FOURTEEN - Remote Data
 
 
 
