@@ -3,6 +3,18 @@ https://github.com/fullstackreact/30-days-of-react
 
 **Take a look at: array split, join, filter and map.**
 
+Determine `state` - Ask three questions about each piece of data:
+https://reactjs.org/docs/state-and-lifecycle.html
+1. Is it passed in from a parent via props? If so, it probably isn’t state.
+2. Does it remain unchanged over time? If so, it probably isn’t state.
+3. Can you compute it based on any other state or props in your component? If so, it isn’t state.
+
+**props are read-only**
+
+Also be mindful that who owns state becomes **the source of truth**.
+
+* Temperature converter from ReactJS.org: https://reactjs.org/docs/lifting-state-up.html
+
 ## One
 
 * React is a JavaScript library for building user interfaces, the view layer for web applications.
@@ -459,6 +471,11 @@ promise.then(bool => console.log('Bool is true'))
 ```
 
 ## SIXTEEN - Display Remote Data
+* Use of fetch - can use ajax or XMHTTPREQUEST
+* returns a promise
+* convert to format `.then(resp => resp.json())`
+
+## SEVENTEEN - Routing
 
 
 
