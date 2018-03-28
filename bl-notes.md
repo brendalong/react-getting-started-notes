@@ -60,4 +60,4 @@ const element = React.createElement(
   'Hello, world!'
 );
 ```
-
+**Recommend naming props from the component’s own point of view rather than the context in which it is being used.**
