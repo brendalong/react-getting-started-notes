@@ -9,6 +9,77 @@
 6. Add inverse data flow
 7. Add server communication
 
+### Example component (with element and render())
+```jsx
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+```
+
+You can convert a functional component (like Clock) to a class in five steps:
+1. Create an ES6 class, with the same name, that extends React.Component.
+1. Add a single empty method to it called render().
+1. Move the body of the function into the render() method.
+1. Replace props with this.props in the render() body.
+1. Delete the remaining empty function declaration.
+
+### Example as class with state
+```jsx
+function FormattedDate(props) {
+  return <h2>It is {props.date.toLocaleTimeString()}.</h2>;
+}
+
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <FormattedDate date={this.state.date} />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Clock />,
+  document.getElementById('root')
+);
+
+```
+
 ## JSX - JavaScript XML
 Write HTML within JS
 ```JSX
