@@ -436,7 +436,16 @@ const App = (props) => {
 }
 ```
 
-# FOURTEEN - Remote Data
+## FOURTEEN - Remote Data
+
+### Use of fetch
+* This example is using fetch with npm install **check on** Not sure if needed.
+* https://fetch.spec.whatwg.org/
+* install fetch library `npm install --save whatwg-fetch`
+
+## FIFTEEN - Promises
+
+
 
 
 
