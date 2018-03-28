@@ -471,11 +471,16 @@ promise.then(bool => console.log('Bool is true'))
 ```
 
 ## SIXTEEN - Display Remote Data
-* Use of fetch - can use ajax or XMHTTPREQUEST
+* Use of fetch - can use ajax or XMHTTPRequest
 * returns a promise
 * convert to format `.then(resp => resp.json())`
 
+# Let's move along to other notes, now...
 ## SEVENTEEN - Routing
+## EIGHTEEN > Flux and Redux for state/data management
+
+## TWENTY-TWO > - Testing (Jasmine)
+## TWENTY-SEVEN > Deployment
 
 
 
