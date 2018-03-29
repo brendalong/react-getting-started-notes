@@ -140,6 +140,8 @@ From: https://github.com/facebook/create-react-app/blob/master/packages/react-sc
 
 Assets outside of the Module System and you can also add other assets to the public folder.
 
+https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files
+
 Note that we normally encourage you to import assets in JavaScript files instead. For example, see the sections on adding a stylesheet and adding images and fonts. This mechanism provides a number of benefits:
 
 1. Scripts and stylesheets get minified and bundled together to avoid extra network requests.
